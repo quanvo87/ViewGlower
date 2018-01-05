@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ViewGlower_Example' do
+  pod 'ViewGlower', :path => '../'
+
+  target 'ViewGlower_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
