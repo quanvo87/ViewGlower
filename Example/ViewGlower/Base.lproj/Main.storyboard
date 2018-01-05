@@ -14,17 +14,36 @@
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="ViewGlower_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="gmk-Ly-LGA"/>
+                        <viewControllerLayoutGuide type="bottom" id="jJM-H4-Y2n"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                    <view key="view" contentMode="scaleToFill" id="Mlo-E9-yry">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCs-gh-AEh">
+                                <rect key="frame" x="32" y="205.5" width="310" height="256"/>
+                                <state key="normal" title="Button" image="happy face"/>
+                                <connections>
+                                    <action selector="didTapButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="z6d-lm-LaB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WCs-gh-AEh" firstAttribute="centerY" secondItem="Mlo-E9-yry" secondAttribute="centerY" id="dsM-hX-y1t"/>
+                            <constraint firstItem="WCs-gh-AEh" firstAttribute="centerX" secondItem="Mlo-E9-yry" secondAttribute="centerX" id="kqe-JM-QaO"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="button" destination="WCs-gh-AEh" id="eQg-y6-dKi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="happy face" width="256" height="256"/>
+    </resources>
 </document>

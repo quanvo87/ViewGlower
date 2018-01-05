@@ -1,0 +1,6 @@
+framework module ViewGlower {
+  umbrella header "ViewGlower-umbrella.h"
+
+  export *
+  module * { export * }
+}
