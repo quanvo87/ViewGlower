@@ -20,7 +20,7 @@ public class ViewGlower {
                      to: CGFloat = 0.9,
                      duration: CFTimeInterval = 1,
                      shouldRepeat: Bool = true) {
-        guard let view = view else {
+        guard let view = view, view.isVisible else {
             return
         }
 
@@ -78,5 +78,28 @@ public class ViewGlower {
         for (_, view) in glowViews {
             view.removeFromSuperview()
         }
+    }
+}
+
+// https://stackoverflow.com/questions/1536923/determine-if-uiview-is-visible-to-the-user
+private extension UIView {
+    var isVisible: Bool {
+        if window == nil {
+            return false
+        }
+        var currentView = self
+        while let superview = currentView.superview {
+            if !(superview.bounds).intersects(currentView.frame) {
+                return false
+            }
+            if currentView.isHidden {
+                return false
+            }
+            if currentView.alpha == 0 {
+                return false
+            }
+            currentView = superview
+        }
+        return true
     }
 }
